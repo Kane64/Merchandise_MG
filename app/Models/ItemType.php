@@ -2,25 +2,20 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Item extends Model
+class ItemType extends Model
 {
+    
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'user_id',
-        'name',
-        'type',
-        'detail',
-        'model_number',
-        'spicy',
-        'stock',
-        'img_path',
-
+        'id',
+        'type_name',
     ];
 
     /**
@@ -29,6 +24,8 @@ class Item extends Model
      * @var array<int, string>
      */
     protected $hidden = [
+        'created_at',
+		'updated_at',
     ];
 
     /**
@@ -37,13 +34,11 @@ class Item extends Model
      * @var array<string, string>
      */
     protected $casts = [
-        //int型に変換
-        'spicy' => 'integer',
-        'stock' => 'integer'
     ];
 
-    public function itemtype()
+    public function items()
     {
-        return $this->belongsTo(ItemType::class,'type','id');
+        return $this->hasMany(Item::class,'id','type')
+                            ->orderBy('created_at', 'asc');
     }
 }
