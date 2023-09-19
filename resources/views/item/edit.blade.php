@@ -45,7 +45,7 @@
                                 <label for="spicy">辛さ</label>
                                 <select id="spicy" class="form-control" name="spicy">
                                     <option value="disabled selected">選択してください</option>                                    
-                                    <option value="0" @if ( $item->spicy == 0) selected="selected" @endif>甘口</option>
+                                    <option value="0" @if ( $item->spicy === 0) selected="selected" @endif>甘口</option>
                                     <option value="1" @if ( $item->spicy == 1) selected="selected" @endif>辛さ１</option>
                                     <option value="2" @if ( $item->spicy == 2) selected="selected" @endif>辛さ２</option>
                                     <option value="3" @if ( $item->spicy == 3) selected="selected" @endif>辛さ３</option>
