@@ -86,7 +86,9 @@ class ItemController extends Controller
     public function destroy($id)
     {
         $items = Item::findOrFail($id);
-        Storage::disk('public')->delete($items->img_path);
+            if ($items->img_path !== null){
+            Storage::disk('public')->delete($items->img_path);
+            }
         $items -> delete();
 
 
