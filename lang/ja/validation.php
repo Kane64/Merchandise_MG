@@ -260,6 +260,7 @@ return [
         'stock' => '在庫数',
         'model_number' => '型番',
         'img_path' => '画像',
+        'detail' => '詳細',
     ],
 
 ];

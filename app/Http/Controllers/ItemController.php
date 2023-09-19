@@ -45,6 +45,7 @@ class ItemController extends Controller
                 'type' => 'required',
                 'stock' => 'required|numeric',
                 'model_number' => 'required',
+                'detail' => 'max:500',
                 'img_path' => 'nullable|mimes:jpg,jpeg,png,gif',
 
             ]);
@@ -66,6 +67,7 @@ class ItemController extends Controller
                 'type' => $request->type,
                 'stock' => $request->stock,
                 'spicy' => $request->spicy,
+                'detail' => $request->detail,
                 'img_path' => $path,
 
                 ]);
@@ -120,6 +122,7 @@ class ItemController extends Controller
                 'type' => 'required',
                 'stock' => 'required|numeric',
                 'model_number' => 'required',
+                'detail' => 'max:500',
                 'img_path' => 'nullable|mimes:jpg,jpeg,png,gif',
 
             ]);
