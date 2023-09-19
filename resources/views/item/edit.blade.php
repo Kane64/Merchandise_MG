@@ -57,7 +57,7 @@
 
                         <div class="form-group">
                             <label for="detail">詳細</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value="{{$item->detail}}"></textarea>
+                            <textarea class="form-control" id="detai" name="detail" rows="3" value="{{$item->detail}}"></textarea>
                         </div>
 
                         <div class="form-row">

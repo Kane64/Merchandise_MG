@@ -55,8 +55,7 @@
 
                         <div class="form-group">
                             <label for="detail">詳細</label>
-                            <!-- <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明"> -->
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control" id="detai" name="detail" rows="3"></textarea>
                         </div>
 
                         <div class="form-row">
