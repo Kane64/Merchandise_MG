@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'ログイン情報が存在しません。入力内容に誤りがないかご確認ください',
+    'failed' => 'ログイン情報が存在しません。入力内容に誤りがないかご確認ください。',
     'password' => 'The provided password is incorrect.',
     'throttle' => 'ログイン試行の規定数に達しました。:seconds秒後に再度お試しください。.',
 
