@@ -45,7 +45,7 @@
                                 <label for="spicy">辛さ</label>
                                 <select id="spicy" class="form-control" name="spicy">
                                     <option value="disabled selected">選択してください</option>                                    
-                                    <option value="0" @if ( $item->spicy == 0) selected="selected" @endif>甘口</option>
+                                    <option value="0" @if ( $item->spicy === 0) selected="selected" @endif>甘口</option>
                                     <option value="1" @if ( $item->spicy == 1) selected="selected" @endif>辛さ１</option>
                                     <option value="2" @if ( $item->spicy == 2) selected="selected" @endif>辛さ２</option>
                                     <option value="3" @if ( $item->spicy == 3) selected="selected" @endif>辛さ３</option>
@@ -57,7 +57,7 @@
 
                         <div class="form-group">
                             <label for="detail">詳細</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value="{{$item->detail}}"></textarea>
+                            <textarea class="form-control" id="detai" name="detail" rows="3">{{$item->detail}}</textarea>
                         </div>
 
                         <div class="form-row">
