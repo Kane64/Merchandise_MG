@@ -1,43 +1,36 @@
-## 商品管理システム
+## レトルトカレー専門店の商品管理システム
 
-### 環境構築手順
+### 概要
 
-* Gitクローン
-* .env.example をコピーして .env を作成
-* MySQLのデータベース作成（名前：item_management）
-* Macの場合 .env の DB_PASSWORD を root に修正（Windowsは修正不要）
+このシステムでは店舗で扱う商品の在庫管理を行うことが出来ます。
+商品の新規登録から編集、削除を行うことができ、各商品の在庫を調整することが出来ます。
 
-    ```INI
-    DB_PASSWORD=root
-    ```
+店内でお客様からリクエストがあった商品を検索するというシチュエーションを想定し、新入スタッフの方にも商品が一目瞭然になるように画像をメインに配置しました。
 
-* APP_KEY生成
+### 主な機能
+- ログイン・ログアウト機能
+- 商品一覧画面
+- 商品新規登録、編集、削除機能
+- 商品在庫管理機能
+- 商品検索機能
+- ソート機能
+- ページネーション機能
+- 画像ファイルアップロード機能
 
-    ```console
-    php artisan key:generate
-    ```
+## 開発環境
+```
+PHP 7.4
+MYSQL 10.4.27
+Laravel 10.13.5
+```
+## 設計書
+[設計書ページへ](https://drive.google.com/drive/folders/13Yoxz8cxyagNNj2DUSypvsxrV_C45fAT?usp=drive_link)
 
-* Composerインストール
+## システム閲覧
+[アプリケーションページへ](https://merchandise-mg-cb995ceb9b7f.herokuapp.com/)
 
-    ```console
-    composer install
-    ```
-
-* フロント環境構築
-
-    ```console
-    npm ci
-    npm run build
-    ```
-
-* マイグレーション
-
-    ```console
-    php artisan migrate
-    ```
-
-* 起動
-
-    ```console
-    php artisan serve
-    ```
+### テストアカウント情報
+```
+メールアドレス： test@test
+パスワード: testtest
+```
