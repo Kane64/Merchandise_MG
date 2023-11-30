@@ -46,4 +46,12 @@ class Item extends Model
     {
         return $this->belongsTo(ItemType::class,'type','id');
     }
+
+    public function user() {
+        return $this->belongsTo('App\Models\User');
+    }
+
+    public function nices() {
+        return $this->hasMany('App\Models\Nice');
+    }
 }

@@ -33,10 +33,16 @@ Route::prefix('items')->group(function () {
     //編集画面
     Route::get('/edit/{id}', [App\Http\Controllers\ItemController::class, 'edit']);
     Route::post('/edit/{id}', [App\Http\Controllers\ItemController::class, 'edit']);
+    //ブックマーク関連
+    Route::post('/{item}/nice', [App\Http\Controllers\NiceController::class, 'store'])->name('nice.store');
+    Route::delete('/{item}/unnice', [App\Http\Controllers\NiceController::class, 'destroy'])->name('nice.destroy');
+    Route::get('/nices', [App\Http\Controllers\ItemController::class, 'nice_items'])->name('nices');
+
     
     //検索処理
     Route::get('/search', [App\Http\Controllers\ItemController::class, 'search'])->name('search');
 
     //並び替え処理
     Route::get('/select', [App\Http\Controllers\ItemController::class, 'select'])->name('select');
+
 });

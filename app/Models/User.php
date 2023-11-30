@@ -42,4 +42,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function nices()
+    {
+        return $this->hasMany(Nice::class);
+    }
+
+    public function nice_items()
+    {
+        return $this->belongsToMany(Item::class, 'nices', 'user_id', 'item_id');
+    }
+
+    public function is_nice($itemId)
+    {
+        return $this->nices()->where('item_id', $itemId)->exists();
+    }
+
 }
