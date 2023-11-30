@@ -1,14 +1,11 @@
 @extends('adminlte::page')
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-@section('title', '商品一覧')
+@section('title', 'Bookmark 一覧')
 
 @section('content_header')
     <div class="top_item">
-        <h1>商品一覧</h1>
-        <div>
-            <a href="{{ url('items/add') }}" class=" btn btn-secondary text-nowrap m-2">商品登録</a>
-        </div>
+        <h1>Bookmark&nbsp;一覧</h1>
     </div>
 @stop
 
@@ -24,20 +21,6 @@
                         <input type="submit" value="検索">
                     </form>
                 </div>
-            </div>
-            <!-- 並び替え -->
-            <div class="col-sm-2">
-                <form id="select_form" action="{{ route('select') }}" method="get">
-                        @csrf
-                    <select id="price" class="form-control" name="price">                                
-                        <option value="1" @selected(request()->price == 1) >新しい順</option>
-                        <option value="2" @selected(request()->price == 2)>古い順</option>
-                        <option value="3" @selected(request()->price == 3)>在庫多い順</option>
-                        <option value="4" @selected(request()->price == 4)>在庫少ない順</option>
-                        <option value="5" @selected(request()->price == 5)>辛い順</option>
-                        <option value="6" @selected(request()->price == 6)>甘い順</option>
-                    </select>
-                </form>
             </div>
             <!-- 表示件数 -->
                 <div>
@@ -56,8 +39,6 @@
         @if (count($items) == 0)
             <div calss='col-12'>
                 <h3>一致する情報は見つかりませんでした。</h3><br>
-                <h5>検索のヒント：</h5>
-                <h5>辛さは数字で検索します。０（甘口）、１～５</h5>
             </div>
         @else
             @foreach ($items as $item)
@@ -139,19 +120,13 @@
 
 @section('css')
 <style>
-        .fa-pepper-hot{
-            color:red;
-        }
-        
-        .top_item{
-            display: flex;
-            justify-content: space-between;
+        .input-group{
+            margin-top: 16px;
+            margin-bottom: 10px;
         }
 
-        @media screen and (max-width:500px) {
-            .top_item {
-                display: block;
-            }
+        .fa-pepper-hot{
+            color:red;
         }
 
         .btn-b{

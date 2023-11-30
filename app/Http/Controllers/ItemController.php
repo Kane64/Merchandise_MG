@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Item;
 use App\Models\ItemType;
 use App\Models\Stock;
+use App\Models\Nice;
 use Illuminate\Support\Facades\Storage;
 
 class ItemController extends Controller
@@ -241,6 +242,27 @@ class ItemController extends Controller
         }
         $items->appends(['price' => $select]);
         return view('item.index', compact('items', 'select'));
+    }
+
+    /**
+     * ブックマーク機能
+     */
+    public function show(Item $item)
+    {  
+        $nice=Nice::where('item_id', $item->id)->where('user_id', auth()->user()->id)->first();
+        return view('item.show', compact('item', 'nice'));
+    }
+
+    /**
+     * ブックマーク一覧
+     */
+    public function nice_items()
+    {
+        $items = \Auth::user()->nice_items()->orderBy('created_at', 'desc')->paginate(16);
+        $data = [
+            'items' => $items,
+        ];
+        return view('item.nice', $data);
     }
 
 }

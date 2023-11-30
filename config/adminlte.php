@@ -109,11 +109,11 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-            'alt' => 'AdminLTE Preloader Image',
+            'path' => 'img\food_retoruto_curry_rice.png',
+            'alt' => 'Preloader Image',
             'effect' => 'animation__shake',
-            'width' => 60,
-            'height' => 60,
+            'width' => 100,
+            'height' => 100,
         ],
     ],
 
@@ -299,6 +299,11 @@ return [
             'text' => '商品登録',
             'url'  => 'items/add',
             'icon' => 'fas fa-utensil-spoon',
+        ],
+        [
+            'text' => 'Bookmark',
+            'url'  => 'items/nices',
+            'icon' => 'fas fa-bookmark',
         ],
 
         // AdminLTEデフォルト
